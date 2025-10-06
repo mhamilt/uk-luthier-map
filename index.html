@@ -102,7 +102,7 @@
             .then(geojson => {
                 
                 geomarkers = geojson['features'].map(feature => {
-                    feature.marker = L.marker(feature.geometry.coordinates, { interactive: false })
+                    feature.marker = L.marker(feature.geometry.coordinates.reverse(), { interactive: false })
                     return feature;
                 })
 

@@ -215,7 +215,7 @@ def makeCompaniesHouseGeoJSON():
                 },
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [float(row[-1]),float(row[-2])]
+                    "coordinates": [float(row[-2]),float(row[-1])]
                 }                            
             }
             
