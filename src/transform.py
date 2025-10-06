@@ -197,7 +197,7 @@ def makeCompaniesHouseGeoJSON():
     }
     
     
-    with open("companies-house-complete.csv", "r", newline="", encoding="utf-8") as filein:
+    with open("companies-house.csv", "r", newline="", encoding="utf-8") as filein:
         reader = csv.reader(filein)
         next(reader)
         
@@ -209,7 +209,9 @@ def makeCompaniesHouseGeoJSON():
                 "name": row[1],
                 "status": row[2], 
                 "dissolved": row[5],
-                "incorporated":row[6],                
+                "incorporated":row[6],
+                "marker-symbol": "marker" if row[2] == "Active" else "danger",
+                "marker-color": "#555555" if row[2] == "Active" else "#ff8647"
                 },
                 "geometry": {
                     "type": "Point",
